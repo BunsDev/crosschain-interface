@@ -14,14 +14,14 @@ export default function Home() {
     primary: '#821FFF',
     initialFromChainId: 250,
     initialToChainId: 43114,
-    style: {
-      primary: '#821fff',
+    // style: {
+      // primary: '#821fff',
       // secondaryContent: '#FFFFFF',
-      advanced: {
-        transparentWidget: true,
+      // advanced: {
+        // transparentWidget: true,
           // secondary: '#FFFFFF'
-      }
-    },
+      // }
+    // },
     availableChains: {
       source: [1, 250, 43114, 10, 42161, 137, 56, 100, 8453, 324, 25, 128, 288, 59144, 66, 42220, 1313161554],
       destination: [1, 250, 43114, 10, 42161, 137, 56, 100, 8453, 324, 25, 128, 288, 59144, 66, 42220, 1313161554]
