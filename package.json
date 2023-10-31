@@ -1,26 +1,32 @@
 {
-  "name": "squid-widget",
+  "name": "crosschain-interface",
+  "description": "Simple but powerful DeFi Swap interface, powered by LI.FI.",
   "version": "0.1.0",
+  "author": "Buns Enchantress",
+  "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "bdev": "next build && yarn dev",
     "dev": "next dev",
     "build": "next build",
+    "bdev": "next build && next dev",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@0xsquid/widget": "^1.6.0",
-    "@soulswapfinance/cross-chain-widget": "^0.1.7",
-    "@types/node": "18.11.9",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9",
-    "eslint": "8.28.0",
-    "eslint-config-next": "13.0.5",
-    "next": "13.0.5",
-    "next-transpile-modules": "^10.0.0",
+    "@lifi/widget": "^2.6.0",
+    "next": "13.5.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.3"
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
+    "typescript": "5.1.6"
   }
 }

@@ -1,98 +1,82 @@
-import { SquidWidget } from "@soulswapfinance/cross-chain-widget";
-import { AppConfig } from "@soulswapfinance/cross-chain-widget/widget/core/types/config";
-// import Image from "next/image";
-// import styles from "../styles/Home.module.css";
+import Head from 'next/head'
+import { Manrope } from 'next/font/google'
+import styles from '@/styles/Home.module.css'
+/* eslint-disable import/no-default-export */
+import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+import { LoadingIndicator } from '../components/LoadingIndicator';
+import Script from 'next/script';
 
-export default function Home() {
-  const config = {
-    companyName: "SoulSwap Finance",
-    integratorId: "soulswap-widget",
-    slippage: 1,
-    instantExec: true,
-    infiniteApproval: false,
-    apiUrl: "https://dev.api.0xsquid.com",
-    primary: '#821FFF',
-    initialFromChainId: 250,
-    initialToChainId: 43114,
-    // style: {
-      // primary: '#821fff',
-      // secondaryContent: '#FFFFFF',
-      // advanced: {
-        // transparentWidget: true,
-          // secondary: '#FFFFFF'
-      // }
-    // },
-    availableChains: {
-      source: [1, 250, 43114, 10, 42161, 137, 56, 100, 8453, 324, 25, 128, 288, 59144, 66, 42220, 1313161554],
-      destination: [1, 250, 43114, 10, 42161, 137, 56, 100, 8453, 324, 25, 128, 288, 59144, 66, 42220, 1313161554]
-    },
-  } as AppConfig;
+const manrope = Manrope({ subsets: ['latin'] })
 
+export const LiFiWidgetNext = dynamic(
+  () => import('../components/Widget').then((module) => module.Widget) as any,
+  {
+    ssr: false,
+    loading: () => <LoadingIndicator />,
+  },
+);
+
+const Home: NextPage = () => {
   return (
-    <div
-      // className={styles.container}
-      style={{
-        display: "grid",
-        flexDirection: "column",
-        // background: "#2A2A2A",
-        // background: "#110E1A",
-        background: "#13131B",
-        // gridAutoFlow: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        // scale: "100%",
-        width: "100%",
-        height: "100%",
-        // border: "1px solid #821fff",
-        // borderRadius: "24px",
-        // marginTop: 12,
-        // maxWidth: "100%",
-        // flexWrap: "nowrap",
-        // border: "1px solid #000000",
-        // paddingBottom: 24,
-      }}
-    >
-      {/* <Image
-        src="https://exchange.soulswap.finance/title-logo-words.png"
-        alt="SoulSwap Logo"
-        width={440}
-        height={100}
-          style={{
-            border: '2px solid #FFFFFF',
-            borderRadius: "10px",
-            padding: 12,
-          }}
-        /> */}
-        <SquidWidget
-          config={config}
-        />
-         {/* <a href={'https://app.soulswap.finance'}
-        target={'_blank'}
-        rel={'noreferrer'}
-        
-        style={{
-          color: '#821FFF',
-          textDecoration: 'none',
-          fontSize: '20px',
-          fontWeight: 'bold',
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            margin: "12px",
-            // marginBottom: "6px",
-            border: '1px solid #821FFF',
-            borderRadius: "10px",
-            // marginLeft: '100px',
-            // marginRight: '100px',
-            justifyContent: 'center',
-          }}
-        >
-          {'Return to SoulSwap'}
-        </div>
-      </a> */}
+    <>
+      <Head>
+        <title>SoulSwap</title>
+        <meta name="description" content="A very simple but powerful crosschain swap interface, powered by LI.FI." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
 
-    </div>
+        <meta name="keywords" content="defi, swap, crypto, lifi, li.fi, exchange, metamask" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SoulSwap Crosschain" />
+        <meta name="twitter:image" content="https://cross.soulswap.finance/og.png" />
+        <meta name="twitter:domain" content="cross.soulswap.finance" />
+        <meta name="twitter:site" content="@SoulSwapFinance" />
+        <meta name="twitter:creator" content="@SoulSwapFinance" />
+        <meta
+          name="twitter:description"
+          content="A very simple but powerful crosschain swap interface, powered by LI.FI."
+        />
+
+        <meta property="og:title" content="SoulSwap Crosschain" />
+        <meta property="og:description" content="A very simple but powerful crosschain swap interface, powered by LI.FI." />
+        <meta property="og:image" content="https://cross.soulswap.finance/og.png" />
+        <meta property="og:url" content="https://cross.soulswap.finance" />
+      </Head>
+      <main className={`${styles.main} ${manrope.className}`}>
+        <div className={styles.center}>
+          {/* <h1 className={styles.title}>Soul xSwap</h1> */}
+          {/* <p className={styles.titleSub}>
+            Powered by Li.Fi<br />
+          </p> */}
+          {/* <p className={styles.sub}>
+            No added fees - <a href="https://github.com/SoulSwapFinance/crosschain-interface" target="_blank" rel="noopener noreferrer">Open Source</a>
+          </p> */}
+          <LiFiWidgetNext />
+        </div>
+      </main>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      {/* <Script
+        strategy="afterInteractive"
+        id="google-tag1"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-CYE6KFRLTH`}
+      />
+      <Script
+        strategy="afterInteractive"
+        id="google-tag2"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CYE6KFRLTH', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      /> */}
+    </>
   );
-}
+};
+
+export default Home;

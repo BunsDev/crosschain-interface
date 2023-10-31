@@ -1,58 +1,38 @@
-# Getting Started with Create React App
+# Crosschain-Interface
 
+Making swapping cryptocurrency easier than ever, no more no less.<br>
+Supporting many chains, exchanges, bridges and coins for both swapping and bridging crosschain.
 
-## Install the widget
+Next.js container application for the https://li.fi/widget/
 
-To install the widget you need to have an npm token. To obtain it, please contact us on our [Discord](https://discord.com/invite/XxCpfZQ7tg).
-Then create a `.npmrc` file at the root of your repository and provide the token in it
+### Live at https://cross.soulswap.finance
 
-```
-//registry.npmjs.org/:_authToken=
-```
+![Screenshot](https://github.com/SoulSwapFinance/crosschain-interface/blob/develop-v2/public/screen1.png?raw=true)
 
-## Transpile module
-Adding the widget in NextJS requires adding the transpile module package
+![Screenshot](https://github.com/SoulSwapFinance/crosschain-interface/blob/develop-v2/public/screen2.png?raw=true)
 
-Why ?
+## Development
 
-This plugin aims to solve the following challenges:
-- code transpilation from local packages (think: a monorepo with a styleguide package)
-- code transpilation from NPM modules using ES6 imports (e.g lodash-es)
+Prerequisites:
 
-```sh
-yarn add next-transpile-modules
-```
+* Node 18
 
-Then on `next.config.js` file, add the following to import the widget as a transpiled module
-```js
-const withTM = require("next-transpile-modules")(["@0xsquid/widget"]);
+Run development server:
 
-const nextConfig = {
-  // Your nextjs config
-};
-
-module.exports = withTM(nextConfig);
-
+```bash
+yarn install
+yarn dev
 ```
 
+Build:
 
-## Widget
-
-You can use the widget with default values like this
-
-```js
-import { SquidWidget } from '@0xsquid/widget';
-// ...
-<SquidWidget />
+```bash
+yarn build
+yarn start
 ```
 
-If you want to customize it, you can use our playground and also take a look at our [documentation](https://docs.0xsquid.com/widget/customisation).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Example
-```js
-<SquidWidget config={ 
-    companyName:"Squid",
-    slippage:3,
-    // customization config
-} />
-```
+## Forking
+
+Change the GA4 tag in index.tsx if you want google analytics.
