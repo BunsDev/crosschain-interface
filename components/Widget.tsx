@@ -14,7 +14,7 @@ const widgetConfig: WidgetConfig = {
       primary: { main: '#a551ff' },
       secondary: { main: '#a551ff' },
       background: { 
-        paper: '#b97cff', // bg color for cards
+        paper: '#03012a', // bg color for cards
         default: '#8223ff', // bg color container // mediumPurple
       },
       grey: {
