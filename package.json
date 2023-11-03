@@ -1,5 +1,5 @@
 {
-  "name": "squid-widget",
+  "name": "crosschain-interface",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@0xsquid/widget": "^1.6.0",
-    "@soulswapfinance/cross-chain-widget": "^0.1.7",
+    "@soulswap/cross-chain-widget": "^0.0.2",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
-    "next": "13.0.5",
+    "next": "13.4.11",
     "next-transpile-modules": "^10.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

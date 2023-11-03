@@ -1,5 +1,5 @@
-import { SquidWidget } from "@soulswapfinance/cross-chain-widget";
-import { AppConfig } from "@soulswapfinance/cross-chain-widget/widget/core/types/config";
+import { SquidWidget } from "@soulswap/cross-chain-widget"
+import { AppConfig } from "@soulswap/cross-chain-widget/widget/core/types/config"
 // import Image from "next/image";
 // import styles from "../styles/Home.module.css";
 
